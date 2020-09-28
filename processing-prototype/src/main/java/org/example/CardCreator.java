@@ -3,7 +3,7 @@ package org.example;
 import java.util.HashSet;
 import java.util.Set;
 
-public class CardsCreator {
+public class CardCreator {
     enum Color{
         HEART,DIAMOND,SPADE,CLUB;
     }
@@ -18,6 +18,8 @@ public class CardsCreator {
                 cardSet.add(card);
             }
         }
+        cardSet.add(new Card("BIG_JOKER","RED",15));
+        cardSet.add(new Card("SMALL_JOKER","BLACK",14));
         return cardSet;
     }
 }
