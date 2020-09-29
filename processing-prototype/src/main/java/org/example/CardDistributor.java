@@ -1,22 +1,40 @@
 package org.example;
 
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class CardDistributor {
     private Map<Integer, Card> distributor_alpha;
     private Map<Integer, Card> distributor_beta;
     private Map<Integer, Card> distributor_gamma;
 
+    public Map<Integer, Card> getDistributor_alpha() {
+        return distributor_alpha;
+    }
+
+    public Map<Integer, Card> getDistributor_beta() {
+        return distributor_beta;
+    }
+
+    public Map<Integer, Card> getDistributor_gamma() {
+        return distributor_gamma;
+    }
+
     public CardDistributor(Set<Card> cardSet) {
+        this.distributor_alpha = new HashMap<>();
+        this.distributor_beta = new HashMap<>();
+        this.distributor_gamma = new HashMap<>();
         int mark = 0;
         int serialNumAlpha = 0;
         int serialNumBeta = 0;
         int serialNumGamma = 0;
-        for (Card card : cardSet) {
+        List<Card> cardList = new ArrayList<>();
+        for(Card card :cardSet){
+            cardList.add(card);
+        }
+        Collections.shuffle(cardList);
+        for (Card card : cardList) {
             mark++;
-            int remainder = mark % 3;
-            switch (remainder) {
+            switch (mark % 3) {
                 case 1:
                     serialNumAlpha++;
                     this.distributor_alpha.put(serialNumAlpha, card);

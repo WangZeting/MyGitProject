@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -11,21 +12,10 @@ public class App
 {
     public static void main( String[] args )
     {
-        Set<Card> preSet = new HashSet<>();
-        preSet.add(new Card("CARD","HEART",3));
-        preSet.add(new Card("CARD","HEART",4));
-        preSet.add(new Card("CARD","HEART",5));
-        preSet.add(new Card("CARD","HEART",6));
-        preSet.add(new Card("CARD","HEART",7));
-        Set<Card> yourSet = new HashSet<>();
-        yourSet.add(new Card("CARD","HEART",4));
-        yourSet.add(new Card("CARD","HEART",5));
-        yourSet.add(new Card("CARD","HEART",6));
-        yourSet.add(new Card("CARD","HEART",7));
-        yourSet.add(new Card("CARD","HEART",8));
-        CardDeck preDeck = new CardDeck(preSet);
-        CardDeck yourDeck = new CardDeck(yourSet);
-        int result = new DeckJudge(preDeck,yourDeck).getJudgement();
-        System.out.println(result);
+        CardCreator cardCreator = new CardCreator();
+        CardDistributor cardDistributor = new CardDistributor(cardCreator.createCards());
+        for (Map.Entry<Integer,Card> entry : cardDistributor.getDistributor_alpha().entrySet()){
+            System.out.println(entry.getValue().getCardName());
+        }
     }
 }

@@ -10,7 +10,7 @@ public class CardCreator {
     enum Name{
         CARD_A,CARD_2,CARD_3,CARD_4,CARD_5,CARD_6,CARD_7,CARD_8,CARD_9,CARD_10,CARD_J,CARD_Q,CARD_K;
     }
-    public Set<Card> createCards(){
+    public static Set<Card> createCards(){
         Set<Card> cardSet = new HashSet<>();
         for (Color color : Color.values()){
             for(Name name : Name.values()){
