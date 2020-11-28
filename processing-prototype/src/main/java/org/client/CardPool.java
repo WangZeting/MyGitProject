@@ -13,26 +13,34 @@ public class CardPool {
     public CardPool(Map<Integer, Card> pool) {
         this.pool = pool;
     }
-    private CardDeck createDeck(int... serialNum){
+
+    public Map<Integer, Card> getPool() {
+        return pool;
+    }
+
+    private CardDeck createDeck(int... serialNum) {
         Set<Card> cardSet = new HashSet<>();
-        for (int num : serialNum){
+        for (int num : serialNum) {
             cardSet.add(this.pool.get(num));
         }
         CardDeck cardDeck = new CardDeck(cardSet);
         return cardDeck;
     }
-    private int sendDeck(CardDeck cardDeck){
+
+    private int sendDeck(CardDeck cardDeck) {
 
         return 1;
     }
-    private void deleteCard(int... serialNum){
-        for(int num : serialNum){
+
+    private void deleteCard(int... serialNum) {
+        for (int num : serialNum) {
             this.pool.remove(num);
         }
     }
-    public void playCard(int... serialNum){
+
+    public void playCard(int... serialNum) {
         CardDeck cardDeck = this.createDeck(serialNum);
-        if (this.sendDeck(cardDeck)==1)
+        if (this.sendDeck(cardDeck) == 1)
             this.deleteCard();
     }
 }

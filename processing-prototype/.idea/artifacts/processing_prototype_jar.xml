@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact name="processing-prototype:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/processing_prototype_jar</output-path>
+    <root id="root">
+      <element id="archive" name="processing-prototype.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="module-output" name="processing-prototype" />
+      </element>
+    </root>
+  </artifact>
+</component>

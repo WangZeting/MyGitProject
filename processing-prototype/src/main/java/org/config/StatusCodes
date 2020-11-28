@@ -1,0 +1,35 @@
+请求发牌:101
+请求出牌:102
+叫地主:103
+请求叫地主结果:104
+不抢地主:105
+请求最后三张牌:106
+不出:107
+
+允许出牌:202
+judge可以出:203
+judge不能出:204
+抢地主成功:205
+抢地主失败:206
+
+111:request cards distributing
+112:ask for landlord
+113:give up asking for landlord
+114:request landlord result
+115:request last three cards
+121:request play permission
+122:give up this time
+123:request refresh
+
+
+211:get landlord identity
+212:get landlord identity failed
+221:allowed to play
+224:not allowed to play
+222:judge ok
+223:judge deny
+231:win
+232:not win
+
+300:ok
+

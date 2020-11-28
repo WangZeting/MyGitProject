@@ -1,10 +1,11 @@
 package org.example;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class CardDeck {
+public class CardDeck implements Serializable {
     private Set<Card> deck;
     private int typeSum;
     private int cardSum;
@@ -30,6 +31,10 @@ public class CardDeck {
 
     public int getLargestNumber() {
         return largestNumber;
+    }
+
+    public Set<Card> getDeck() {
+        return deck;
     }
 
     public CardDeck(Set<Card> cardSet) {
@@ -61,6 +66,8 @@ public class CardDeck {
             if (this.largestNumber < entry.getKey())
                 this.largestNumber = entry.getKey();
         }
+        if (this.largestNumber == -1)
+            return;
         if (this.largestNumber < 14) {
             this.mainNumber -= 2;
             if (this.mainNumber < 1)
